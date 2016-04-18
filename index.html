@@ -1,146 +1,212 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <link rel="stylesheet" href="css/banan.css">
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src=”js/checknet-1.3.min.js”></script>
- <script>
+	<meta charset="utf-8">
+	<title>Noc informatyka</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.css" >
+	<link rel="stylesheet" href="css/banan.css">
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.functions.js"></script>
+
+	<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+	<script type="text/javascript" charset="utf-8">
+
+		</script>
+	<script>
+		$( document ).on( "pagecreate", function() {
+			$( "body > [data-role='panel']" ).panel();
+			$( "body > [data-role='panel'] [data-role='listview']" ).listview();
+		});
+		$( document ).one( "pageshow", function() {
+			$( "body > [data-role='header']" ).toolbar();
+			$( "body > [data-role='header'] [data-role='navbar']" ).navbar();
+		});
+
+		function checkConnection() {
+			var networkState = navigator.connection.type;
+			var connect = document.getElementById('Connection');
+
+			var states = {};
+			states[Connection.UNKNOWN]  = 'Unknown connection';
+			states[Connection.ETHERNET] = 'Ethernet connection';
+			states[Connection.WIFI]     = 'WiFi connection';
+			states[Connection.CELL_2G]  = 'Cell 2G connection';
+			states[Connection.CELL_3G]  = 'Cell 3G connection';
+			states[Connection.CELL_4G]  = 'Cell 4G connection';
+			states[Connection.CELL]     = 'Cell generic connection';
+			states[Connection.NONE]     = 'No network connection';
+
+			connect.innerHTML = 'Connection type: ' + states[networkState];
+		}
 
 
-   // funkcja sprawdzajaca czy istnieje lacze internetowe
-
- /*  function doesConnectionExist() {
-      var xhr = new XMLHttpRequest();
-      var file = "http://www.adresStrony.com/jakisPlik.png";
-      var randomNum = Math.round(Math.random() * 10000);
-
-         xhr.open('HEAD', file + "?rand=" + randomNum, false);
-
-        try {
-            xhr.send();
-
-            if (xhr.status >= 200 && xhr.status < 304) {
-                return true;
-              } else {
-                return false;
-          }
-        } catch (e) {
-          return false;
-      }
-  }  */
-</script>
 
 
-
+	</script>
+	<style>
+		#pp{
+			margin: 0 auto;
+			width:250px;
+			text-align: center;
+		}
+	</style>
 </head>
-<body >
+<body>
 
-<div data-role="page" id="page1">
-    <div data-role="header">
+	<div data-role="header" data-position="fixed" data-theme="a">
+		<div id="logo">
+			<img src="img/splash.png" alt="nie wyswietla" width="100" height="150" />
+		</div>
 
-        <div id="stopka_gora">
-        <img src="img/splash.png" alt="nie wyswietla" width="100" height="150" />
-        <br>
-        <h2>Noc informatyka</h2>
-        </div>
-    </div>
+		<h1>Noc informatyka</h1>
+		<!--<a href="#outside" data-icon="bars" data-iconpos="notext">Menu</a> -->
+		<a href="#myPanel" data-role="button"  data-iconpos="right" data-icon="myapp-settings"></a>
 
-    <div data-role="main" class="ui-content">
+	</div><!-- /header -->
 
-        <div data-role="panel" id="myPanel" data-display="overlay">
-            <h3>Panel Header</h3>
+	      <div data-role="page" id="main">
 
+		     <div role="main" class="ui-content" style="text-align: center">
 
-            <ul data-role="listview" class="ui-listview">
-                <li> <a href="#page1" data-transition="slide">Page1</a>  </li>
-                <li> <a href="#page2" data-transition="slide">Page2</a> </li>
-                <li> <a href="#page3">Page Three</a>  </li>
-                <li> <a href="#page4">Page Four</a>  </li>
-            </ul>
+		        <h2> Przykładowy nagłówek</h2>
 
-        </div>
+		        <p>Zawartosc strony</p>
 
-        <a href="#myPanel" data-role="button"  data-iconpos="right" data-icon="myapp-settings"></a>
-
-        <div id="wrap">
-            <p>Some other content of the site</p>
-        </div>
-        <br>
-
-
-    </div>
-
-    <div id="stopka_dol" data-role="footer">
-        <h1>Stopka</h1>
-        <FORM>
-            <INPUT TYPE="button" onClick="history.go(0)" VALUE="Odśwież">
-        </FORM>
-
-      <div >
-          <p id="data"> <script language="LiveScript">document.write(document.lastModified)</script> </p>
-
-
-      </div>
-    </div>
-</div>
-
-
-<div data-role="page" id="page2">
-    <div data-role="header">
-
-        <div id="stopka_gora">
-            <img src="img/splash.png" alt="nie wyswietla" width="100" height="150" />
-            <br>
-            <h2>Noc informatyka</h2>
-        </div>
-    </div>
-
-    <div data-role="main" class="ui-content ui-bar-d">
-
-        <div data-role="panel" id="myPanel" data-display="overlay">
-            <h3>Panel Header</h3>
-
-
-            <ul data-role="listview" class="ui-listview">
-                <li> <a href="#page1" data-transition="slide">Page1</a>  </li>
-                <li> <a href="#page2" data-transition="slide">Page2</a> </li>
-                <li> <a href="#page3">Page Three</a>  </li>
-                <li> <a href="#page4">Page Four</a>  </li>
-            </ul>
-
-        </div>
-
-        <a href="#myPanel" data-role="button"  data-iconpos="right" data-icon="myapp-settings"></a>
-
-        <div id="wrap">
-            <p>Some other content of the site</p>
-        </div>
-        <br>
-
-
-        <!-- <a href="#page1" onclick="loadPage()">load</a>
-        <a href="#page2" onclick="loadPage()">load2</a>
-        -->
+			
+		     </div><!-- /content -->
 
 
 
-    </div>
+		     <div data-role="footer" data-position="fixed" data-theme="a">
+			 <h4>Banan </h4>
 
-    <div id="stopka_dol" data-role="footer">
-        <h1>Stopka</h1>
-        <FORM>
-            <INPUT TYPE="button" onClick="history.go(0)" VALUE="Odśwież">
-        </FORM>
+			   <FORM>
+				  <INPUT TYPE="button" onClick="history.go(0)" VALUE="Odśwież">
+			   </FORM>
 
-        <div >
-            <p id="data"> <script language="LiveScript">document.write(document.lastModified)</script> </p>
-        </div>
-    </div>
-</div>
+			  <div >
+				<p id="data"> <script language="LiveScript">document.write(document.lastModified)</script> </p>
+				<button onclick='document.getElementById("siec").innerHTML = navigator.connection.type'> info o sieci </button>
+				<p id="siec"></p>
+
+			  </div>
+
+		</div><!-- /footer -->
+
+	</div><!-- /page -->
+
+	<div data-role="panel" id="myPanel" data-theme="b"  data-display="push" data-position="left">
+		<ul data-role="listview">
+			<li data-icon="back"><a href="#" data-rel="close">Schowaj</a></li>
+			<li><a href="#main" data-transition="slide">Home</a></li>
+			<li><a href="#page1"data-transition="slide">Strona1</a></li>
+			<li><a href="#page2">Strona2</a></li>
+			<li><a href="#page3" >Strona3</a></li>
+			<li><a href="#page4" >Strona4</a></li>
+		</ul>
+	</div>  <!-- panel -->
+
+
+
+
+
+
+     <!--PAGE2 -->
+	<div data-role="page" id="page1">
+	  <div role="main" class="ui-content" >
+
+		   <h2>Autor:</h2>
+
+		   <p></p>
+		   <p>Grupa KrDUIs1012</p>
+
+	  </div>
+
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<h4>Banan </h4>
+
+			<FORM>
+				<INPUT TYPE="button" onClick="history.go(0)" VALUE="Odśwież">
+			</FORM>
+
+			<div >
+				 <p id="data"> <script language="LiveScript">document.write(document.lastModified)</script> </p>
+				 <button onclick='document.getElementById("siec").innerHTML = navigator.connection.type'> info o sieci </button>
+				 <p id="siec"></p>
+
+		    </div><!-- /footer -->
+	      </div>
+	</div><!-- Strona 1 -->
+
+
+	<div data-role="page" id="page2">
+		<div role="main" class="ui-content" >
+
+			<h2>Autor:Damian</h2>
+
+			<p></p>
+			<p>Grupa KrDUIs1012</p>
+
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<h4>Banan </h4>
+
+			<FORM>
+				<INPUT TYPE="button" onClick="history.go(0)" VALUE="Odśwież">
+			</FORM>
+
+			<div >
+				<p id="data"> <script language="LiveScript">document.write(document.lastModified)</script> </p>
+				<button onclick='document.getElementById("siec").innerHTML = navigator.connection.type'> info o sieci </button>
+				<p id="siec"></p>
+
+			</div><!-- /footer -->
+		</div>
+	</div> <--Strona 2 -->
+
+
+
+
+	<div data-role="page" id="page3">
+		<div role="main" class="ui-content" >
+
+			<h2>Autor:Damian</h2>
+
+			<p></p>
+			<p>Zawartość strony trzeciej</p>
+
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<h4>Banan </h4>
+
+			<FORM>
+				<INPUT TYPE="button" onClick="history.go(0)" VALUE="Odśwież">
+			</FORM>
+
+			<div >
+				<p id="data"> <script language="LiveScript">document.write(document.lastModified)</script> </p>
+				<button onclick='document.getElementById("siec").innerHTML = navigator.connection.type'> info o sieci </button>
+				<p id="siec"></p>
+
+			</div><!-- /footer -->
+		</div>
+	</div> <--Strona 3 -->
+
+
+
+
+
 
 
 

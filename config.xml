@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
 xmlns:gap = "http://phonegap.com/ns/1.0"
-id= "testaplikacji"
+id= "niezbednik"
 versionCode = "1"
 version = "1.0.0" >
-<name>Kowalix</name>
-<description>Moja pierwsza aplikacja</description>
-<author>Gosia</author>
-        <preference name="SplashScreen" value="background.9.png" />
-        <preference name="SplashScreenDelay" value="10000" />
-        <gap:platform name="android" />
-      <gap:plugin name="org.apache.cordova.dialogs" />
-      <gap:plugin name="org.apache.cordova.splashscreen" />
-      
-	  <icon src="res/mipmap-mdpi/ic_launcher.png" platform="android" qualifier="mdpi" />
+    <name>Kowalix</name>
+    <description>probna aplikacja</description>
+    <author></author>
+	
+	<preference name="SplashScreen" value="background.9.png" />
+<preference name="SplashScreenDelay" value="10000" />
+	
+   <gap:platform name="android" />
+   <gap:plugin name="org.apache.cordova.dialogs" />
+   <gap:plugin name="cordova-plugin-device"/>
+   <gap:plugin name="cordova-plugin-network-information"/>
+   <gap:plugin name="cordova-plugin-file" spec="3.0.0" source="pgb" />
+
+     
+	 <icon src="res/mipmap-mdpi/ic_launcher.png" platform="android" qualifier="mdpi" />
       <icon src="res/mipmap-hdpi/ic_launcher.png" platform="android" qualifier="hdpi" />
       <icon src="res/mipmap-xhdpi/ic_launcher.png" platform="android" qualifier="xhdpi" />
       <icon src="res/mipmap-xxhdpi/ic_launcher.png" platform="android" qualifier="xxhdpi" />
@@ -24,6 +29,5 @@ version = "1.0.0" >
   <splash src="res/drawable-xhdpi/background.9.png" platform="android" qualifier="xhdpi" />
   <splash src="res/drawable-xxhdpi/background.9.png" platform="android" qualifier="xxhdpi" />
   <splash src="res/drawable-xxxhdpi/background.9.png" platform="android" qualifier="xxxhdpi" />
-
 
 </widget>

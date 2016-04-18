@@ -1,0 +1,44 @@
+#pageone {
+
+    background-color: lightgrey;
+}
+
+#stopka_gora{
+    text-align: center;
+    margin: auto;
+
+}
+
+#stopka_dol{
+    width: auto;
+    margin: auto;
+}
+
+#myPanel {
+    margin-left: 0px;
+    min-width: 200px;
+    color: purple;
+}
+
+.ui-icon-myapp-settings {
+    background: url("../img/icon.png") no-repeat /*rgba(0, 0, 0, 0.4) !important*/;
+    height: 20px;
+    width: 7px;
+}
+
+#wrap {
+    width: 200px;
+    margin-left: -100px; /* połowa szerokości */
+    position: absolute;
+    left: 50%;
+}
+
+
+#data {
+    font-family: sans-serif;
+    font-size: 7px;
+}
+
+a link {
+    color: purple;
+}

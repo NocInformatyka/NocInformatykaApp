@@ -8,9 +8,8 @@ version = "1.0" >
 <description>...czyli kulturalne wyjadanie klawiatury</description>
 <author>Damian Plata, Damian Kowalik</author>
 <access origin="http://nocinformatyka.pl" />
-      <!--  <preference name="SplashScreen" value="background.9.png" />
-        <preference name="SplashScreenDelay" value="10000" />   -->
-       
+     
+	 <gap:plugin name="org.apache.cordova.vibration" spec="0.3.13" source="pgb" />
 
 	   <!--<gap:platform name="android" />-->
 	<gap:plugin name="org.apache.cordova.dialogs" />
